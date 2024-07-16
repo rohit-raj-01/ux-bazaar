@@ -59,7 +59,7 @@ export default function Home() {
         </div>
       </MaxWidthWrapper>
 
-      <section className="border-t">
+      <section>
         <MaxWidthWrapper className="py-20">
           <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:grid-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
             {perks.map((perk) =>
