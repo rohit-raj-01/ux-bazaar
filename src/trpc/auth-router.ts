@@ -3,17 +3,6 @@ import { publicProcedure, router } from './trpc'
 import { getPayloadClient } from '../get-payload'
 import { TRPCError } from '@trpc/server'
 import { z } from 'zod'
-import nodemailer from 'nodemailer'
-
-const transporter = nodemailer.createTransport({
-    host: 'smtp.resend.com',
-    secure: true,
-    port: 465,
-    auth: {
-        user: 'resend',
-        pass: process.env.RESEND_API_KEY,
-    },
-})
 
 export const authRouter = router({
     createPayloadUser: publicProcedure
@@ -43,23 +32,6 @@ export const authRouter = router({
                     role: 'user',
                 },
             })
-            const mailOptions = {
-                from: 'onboarding@resend.dev',
-                to: email,
-                subject: 'Verify your email',
-                text: `Please verify your email by clicking the link: <verification_link>`,
-            }
-
-            try {
-                await transporter.sendMail(mailOptions)
-                console.log('Verification email sent to', email)
-            } catch (error) {
-                console.error('Error sending email:', error)
-                throw new TRPCError({
-                    code: 'INTERNAL_SERVER_ERROR',
-                    message: 'Failed to send verification email',
-                })
-            }
 
             return { success: true, sentToEmail: email }
         }),

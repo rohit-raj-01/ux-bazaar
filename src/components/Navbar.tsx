@@ -5,13 +5,14 @@ import logo from '/public/logo.png'
 import NavItems from './NavItems'
 import { buttonVariants } from '@/components/ui/button'
 import ThemeToggler from './ThemeToggler'
-// import { cookies } from "next/headers"
+import { cookies } from "next/headers"
+import UserAccountNav from './UserAccountNav'
+import { getServerSideUser } from '@/lib/payload-utils'
 import Cart from "./Cart"
 
-const Navbar = () => {
-    // const nextCookies = cookies()
-    // const { user } = await getServerSideUser(nextCookies)
-    const user=null;
+const Navbar =async () => {
+    const nextCookies = cookies()
+    const { user } = await getServerSideUser(nextCookies)
     return (
         <div className="z-50 top-0 inset-0 h-16">
             <header className="relative ">
@@ -54,8 +55,8 @@ const Navbar = () => {
                                     )}
 
                                     {user ? (
-                                        // <UserAccountNav user={user} />
-                                        <p></p>
+                                        <UserAccountNav user={user} />
+                                        
                                     ) : (
                                         <Link
                                             href='/sign-up'
