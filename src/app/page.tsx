@@ -1,9 +1,9 @@
-import MaxWidthWrapper from "./components/MaxWIdthWrapper";
+import MaxWidthWrapper from "@/components/MaxWIdthWrapper";
 import Link from "next/link";
 
 import { Button } from '@/components/ui/button';
 import { buttonVariants } from "@/components/ui/button";
-import { ArrowDownToLine, CheckCircle, Zap, Gift ,BellPlus,HandCoins} from "lucide-react";
+import { ArrowDownToLine, CheckCircle, Zap, Gift, BellPlus, HandCoins } from "lucide-react";
 
 const perks = [
   {
@@ -41,7 +41,7 @@ const perks = [
 export default function Home() {
   return (
     <>
-   
+
       <MaxWidthWrapper>
         <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
 
