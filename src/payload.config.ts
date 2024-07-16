@@ -1,22 +1,29 @@
-import { mongooseAdapter } from "@payloadcms/db-mongodb";
-import { buildConfig } from "payload/config";
-import { slateEditor } from "@payloadcms/richtext-slate";
-import { webpackBundler } from "@payloadcms/bundler-webpack";
+import { buildConfig } from 'payload/config'
+import { webpackBundler } from '@payloadcms/bundler-webpack'
+import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import { slateEditor } from '@payloadcms/richtext-slate'
 import path from 'path'
+import { Users } from './collections/Users'
+import dotenv from 'dotenv'
+
+dotenv.config({
+    path: path.resolve(__dirname, '../.env'),
+})
+
 export default buildConfig({
     serverURL: process.env.NEXT_PUBLIC_SERVER_URL || '',
-    collections: [],
+    collections: [Users],
     routes: {
-        admin: '/sell'
+        admin: '/sell',
     },
     admin: {
+        user: 'users',
         bundler: webpackBundler(),
-        meta:{
-            titleSuffix:'UX Bazaar',
-            favicon:'/favicon.ico',
-            ogImage:'/thumbnail.png',
-
-        }
+        meta: {
+            titleSuffix: '- UX Bazaar',
+            favicon: '/favicon.ico',
+            ogImage: '/thumbnail.png',
+        },
     },
     rateLimit: {
         max: 2000,
