@@ -1,5 +1,7 @@
 import MaxWidthWrapper from "@/components/MaxWIdthWrapper";
 import Link from "next/link";
+import ProductReel from '@/components/ProductReel'
+import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 
 import { Button } from '@/components/ui/button';
 import { buttonVariants } from "@/components/ui/button";
@@ -57,6 +59,11 @@ export default function Home() {
             <Button variant='ghost'>Our quality promise &rarr;</Button>
           </div>
         </div>
+        <ProductReel
+          query={{ sort: 'desc', limit: 4 }}
+          href='/products?sort=recent'
+          title='Brand new'
+        />
       </MaxWidthWrapper>
 
       <section>
