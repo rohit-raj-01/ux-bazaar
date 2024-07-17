@@ -1,4 +1,4 @@
-// import { PrimaryActionEmailHtml } from '../components/emails/PrimaryActionEmail'
+import { PrimaryActionEmailHtml } from '../components/emails/PrimaryActionEmail'
 import { Access, CollectionConfig } from 'payload/types'
 
 const adminsAndUser: Access = ({ req: { user } }) => {
@@ -16,12 +16,11 @@ export const Users: CollectionConfig = {
     auth: {
         verify: {
             generateEmailHTML: ({ token }) => {
-                // return PrimaryActionEmailHtml({
-                //     actionLabel: "verify your account",
-                //     buttonText: "Verify Account",
-                //     href: `${process.env.NEXT_PUBLIC_SERVER_URL}/verify-email?token=${token}`
-                // })
-                return `<a href='${process.env.NEXT_PUBLIC_SERVER_URL}/verify-email?token=${token}'>Verify Account</a>`
+                return PrimaryActionEmailHtml({
+                    actionLabel: "verify your account",
+                    buttonText: "Verify Account",
+                    href: `${process.env.NEXT_PUBLIC_SERVER_URL}/verify-email?token=${token}`
+                })
             },
         },
     },
@@ -36,6 +35,26 @@ export const Users: CollectionConfig = {
         defaultColumns: ['id'],
     },
     fields: [
+        {
+            name: 'products',
+            label: 'Products',
+            admin: {
+                condition: () => false,
+            },
+            type: 'relationship',
+            relationTo: 'products',
+            hasMany: true,
+        },
+        {
+            name: 'product_files',
+            label: 'Product files',
+            admin: {
+                condition: () => false,
+            },
+            type: 'relationship',
+            relationTo: 'product_files',
+            hasMany: true,
+        },
         {
             name: 'role',
             defaultValue: 'user',
