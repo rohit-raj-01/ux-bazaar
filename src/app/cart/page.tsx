@@ -38,16 +38,16 @@ const Page = () => {
     const fee = 1
 
     return (
-        <div className='bg-white'>
+        <div className='bg-background'>
             <div className='mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8'>
-                <h1 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+                <h1 className='text-3xl font-bold tracking-tight text-foreground-500 sm:text-4xl'>
                     Shopping Cart
                 </h1>
 
                 <div className='mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16'>
                     <div
                         className={cn('lg:col-span-7', {
-                            'rounded-lg border-2 border-dashed border-zinc-200 p-12':
+                            'rounded-lg border-2 border-dashed border-muted-background p-12':
                                 isMounted && items.length === 0,
                         })}>
                         <h2 className='sr-only'>
@@ -77,7 +77,7 @@ const Page = () => {
 
                         <ul
                             className={cn({
-                                'divide-y divide-gray-200 border-b border-t border-gray-200':
+                                'divide-y divide-foreground-800 border-b border-t border-foreground-800':
                                     isMounted && items.length > 0,
                             })}>
                             {isMounted &&
@@ -113,7 +113,7 @@ const Page = () => {
                                                             <h3 className='text-sm'>
                                                                 <Link
                                                                     href={`/product/${product.id}`}
-                                                                    className='font-medium text-gray-700 hover:text-gray-800'>
+                                                                    className='font-medium text-foreground'>
                                                                     {product.name}
                                                                 </Link>
                                                             </h3>
@@ -125,7 +125,7 @@ const Page = () => {
                                                             </p>
                                                         </div>
 
-                                                        <p className='mt-1 text-sm font-medium text-gray-900'>
+                                                        <p className='mt-1 text-sm font-medium text-foreground'>
                                                             {formatPrice(product.price)}
                                                         </p>
                                                     </div>
@@ -147,7 +147,7 @@ const Page = () => {
                                                     </div>
                                                 </div>
 
-                                                <p className='mt-4 flex space-x-2 text-sm text-gray-700'>
+                                                <p className='mt-4 flex space-x-2 text-sm text-muted-forground'>
                                                     <Check className='h-5 w-5 flex-shrink-0 text-green-500' />
 
                                                     <span>
@@ -161,17 +161,17 @@ const Page = () => {
                         </ul>
                     </div>
 
-                    <section className='mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8'>
-                        <h2 className='text-lg font-medium text-gray-900'>
+                    <section className='mt-16 rounded-lg bg-foreground-800 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8'>
+                        <h2 className='text-lg font-medium text-primary'>
                             Order summary
                         </h2>
 
                         <div className='mt-6 space-y-4'>
                             <div className='flex items-center justify-between'>
-                                <p className='text-sm text-gray-600'>
+                                <p className='text-sm text-muted-foreground'>
                                     Subtotal
                                 </p>
-                                <p className='text-sm font-medium text-gray-900'>
+                                <p className='text-sm font-medium text-foreground'>
                                     {isMounted ? (
                                         formatPrice(cartTotal)
                                     ) : (
@@ -180,11 +180,11 @@ const Page = () => {
                                 </p>
                             </div>
 
-                            <div className='flex items-center justify-between border-t border-gray-200 pt-4'>
+                            <div className='flex items-center justify-between border-t border-foreground-800 pt-4'>
                                 <div className='flex items-center text-sm text-muted-foreground'>
                                     <span>Flat Transaction Fee</span>
                                 </div>
-                                <div className='text-sm font-medium text-gray-900'>
+                                <div className='text-sm font-medium text-foreground'>
                                     {isMounted ? (
                                         formatPrice(fee)
                                     ) : (
@@ -193,11 +193,11 @@ const Page = () => {
                                 </div>
                             </div>
 
-                            <div className='flex items-center justify-between border-t border-gray-200 pt-4'>
-                                <div className='text-base font-medium text-gray-900'>
+                            <div className='flex items-center justify-between border-t border-foreground-800 pt-4'>
+                                <div className='text-base font-medium text-muted-foreground'>
                                     Order Total
                                 </div>
-                                <div className='text-base font-medium text-gray-900'>
+                                <div className='text-base font-medium text-foreground'>
                                     {isMounted ? (
                                         formatPrice(cartTotal + fee)
                                     ) : (

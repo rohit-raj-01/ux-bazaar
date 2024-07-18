@@ -5,7 +5,7 @@ import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 
 import { Button } from '@/components/ui/button';
 import { buttonVariants } from "@/components/ui/button";
-import { ArrowDownToLine, CheckCircle, Zap, Gift, BellPlus, HandCoins } from "lucide-react";
+import { ArrowDownToLine, CheckCircle, Zap, Gift, BellPlus, CircleDollarSign } from "lucide-react";
 
 const perks = [
   {
@@ -35,7 +35,7 @@ const perks = [
   },
   {
     name: 'Transparent Pricing',
-    icon: HandCoins,
+    icon: CircleDollarSign,
     description: 'Benefit from transparent pricing with no hidden fees or surprises, ensuring you get the most value for your investment.'
   },
 ]

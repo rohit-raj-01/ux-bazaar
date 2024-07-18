@@ -31,16 +31,16 @@ const PaymentStatus = ({
     }, [data?.isPaid, router])
 
     return (
-        <div className='mt-16 grid grid-cols-2 gap-x-4 text-sm text-gray-600'>
+        <div className='mt-16 grid grid-cols-2 gap-x-4 text-sm text-foreground'>
             <div>
-                <p className='font-medium text-gray-900'>
+                <p className='font-medium text-muted-foreground'>
                     Shipping To
                 </p>
                 <p>{orderEmail}</p>
             </div>
 
             <div>
-                <p className='font-medium text-gray-900'>
+                <p className='font-medium text-muted-foreground'>
                     Order Status
                 </p>
                 <p>

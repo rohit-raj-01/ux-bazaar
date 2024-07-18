@@ -51,7 +51,7 @@ const MobileNav = () => {
                             <button
                                 type='button'
                                 onClick={() => setIsOpen(false)}
-                                className='relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400'>
+                                className='relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-foreground'>
                                 <X className='h-6 w-6' aria-hidden='true' />
                             </button>
                         </div>
@@ -62,9 +62,9 @@ const MobileNav = () => {
                                     <li
                                         key={category.label}
                                         className='space-y-10 px-4 pb-8 pt-10'>
-                                        <div className='border-b border-gray-200'>
+                                        <div className='border-b border-foreground-800'>
                                             <div className='-mb-px flex'>
-                                                <p className='border-transparent text-gray-900 flex-1 whitespace-nowrap border-b-2 py-4 text-base font-medium'>
+                                                <p className='border-transparent text-forground flex-1 whitespace-nowrap border-b-2 py-4 text-base font-medium'>
                                                     {category.label}
                                                 </p>
                                             </div>
@@ -85,7 +85,7 @@ const MobileNav = () => {
                                                     </div>
                                                     <Link
                                                         href={item.href}
-                                                        className='mt-6 block font-medium text-gray-900'>
+                                                        className='mt-6 block font-medium text-muted-foreground'>
                                                         {item.name}
                                                     </Link>
                                                 </div>
@@ -96,12 +96,12 @@ const MobileNav = () => {
                             </ul>
                         </div>
 
-                        <div className='space-y-6 border-t border-gray-200 px-4 py-6'>
+                        <div className='space-y-6 border-t border-foreground-800 px-4 py-6'>
                             <div className='flow-root'>
                                 <Link
                                     onClick={() => closeOnCurrent('/sign-in')}
                                     href='/sign-in'
-                                    className='-m-2 block p-2 font-medium text-gray-900'>
+                                    className='-m-2 block p-2 font-medium text-foreground'>
                                     Sign in
                                 </Link>
                             </div>
@@ -109,7 +109,7 @@ const MobileNav = () => {
                                 <Link
                                     onClick={() => closeOnCurrent('/sign-up')}
                                     href='/sign-up'
-                                    className='-m-2 block p-2 font-medium text-gray-900'>
+                                    className='-m-2 block p-2 font-medium text-foreground'>
                                     Sign up
                                 </Link>
                             </div>

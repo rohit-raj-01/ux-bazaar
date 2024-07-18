@@ -15,9 +15,9 @@ const Footer = () => {
     ]
 
     return (
-        <footer className='bg-white flex-grow-0'>
+        <footer className='bg-background flex-grow-0'>
             <MaxWidthWrapper>
-                <div className='border-t border-gray-200'>
+                <div className='border-t border-foreground-800'>
                     {pathsToMinimize.includes(pathname) ? null : (
                         <div className='pb-8 pt-16'>
                             <div className='flex justify-center'>
@@ -36,12 +36,12 @@ const Footer = () => {
                                 <div className='absolute inset-0 overflow-hidden rounded-lg'>
                                     <div
                                         aria-hidden='true'
-                                        className='absolute bg-zinc-50 inset-0 bg-gradient-to-br bg-opacity-90'
+                                        className='absolute bg-foreground-50 inset-0 bg-gradient-to-br bg-opacity-90'
                                     />
                                 </div>
 
                                 <div className='text-center relative mx-auto max-w-sm'>
-                                    <h3 className='font-semibold text-gray-900'>
+                                    <h3 className='font-semibold text-background-900'>
                                         Become a seller
                                     </h3>
                                     <p className='mt-2 text-sm text-muted-foreground'>
@@ -50,7 +50,7 @@ const Footer = () => {
                                         minutes.{' '}
                                         <Link
                                             href='/sign-in?as=seller'
-                                            className='whitespace-nowrap font-medium text-black hover:text-zinc-900'>
+                                            className='whitespace-nowrap font-medium text-primary hover:text-foreground'>
                                             Get started &rarr;
                                         </Link>
                                     </p>
