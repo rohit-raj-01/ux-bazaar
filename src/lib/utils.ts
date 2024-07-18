@@ -59,7 +59,7 @@ export function constructMetadata({
       creator: '@rohit',
     },
     icons,
-    metadataBase: new URL('http://localhost:3000'),
+    metadataBase: new URL('https://ux-bazaar-production.up.railway.app'),
     ...(noIndex && {
       robots: {
         index: false,

@@ -5,7 +5,11 @@ const nextConfig = {
       {
         protocol: 'http',
         hostname: 'localhost',
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'ux-bazaar-production.up.railway.app',
+      },
     ],
   },
 };
